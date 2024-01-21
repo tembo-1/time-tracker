@@ -1,0 +1,21 @@
+{
+  "resources/fonts/Inter-VariableFont_slnt,wght.ttf": {
+    "file": "assets/Inter-VariableFont_slnt_wght-cf3cb43b.ttf",
+    "src": "resources/fonts/Inter-VariableFont_slnt,wght.ttf"
+  },
+  "resources/js/app.css": {
+    "file": "assets/app-24418b02.css",
+    "src": "resources/js/app.css"
+  },
+  "resources/js/app.js": {
+    "assets": [
+      "assets/Inter-VariableFont_slnt_wght-cf3cb43b.ttf"
+    ],
+    "css": [
+      "assets/app-24418b02.css"
+    ],
+    "file": "assets/app-1f803ebc.js",
+    "isEntry": true,
+    "src": "resources/js/app.js"
+  }
+}

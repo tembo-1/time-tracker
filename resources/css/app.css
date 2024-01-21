@@ -1,0 +1,186 @@
+@font-face {
+    font-family: "Inter";
+    src: url("/resources/fonts/Inter-VariableFont_slnt,wght.ttf");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    h1 {
+        @apply text-4xl
+    }
+
+    body {
+        @apply text-dark bg-light-gray
+    }
+
+    html {
+        @apply scroll-smooth font-inter
+    }
+
+    /* Для прижатия футера */
+    html, body {
+        @apply h-full
+    }
+
+    #app {
+        @apply min-h-full flex flex-col
+    }
+
+    #app>.container{
+        @apply flex-1
+    }
+}
+
+@layer components {
+    .btn {
+        @apply flex justify-center items-center gap-x-5 px-30 py-10 rounded-5 disabled:opacity-50 focus-visible:outline-main-green text-base
+    }
+
+    .btn-white {
+        @apply bg-white shadow enabled:hover:text-main-green duration-100 text-dark
+    }
+
+    .btn-green {
+        @apply bg-main-green enabled:hover:bg-main-green-700 duration-100 text-white
+    }
+
+    .btn-white-bordered {
+        @apply bg-white enabled:hover:bg-light-gray duration-100 border border-gray text-dark
+    }
+
+    .btn-hovered-green {
+        @apply enabled:hover:text-white enabled:hover:bg-main-green enabled:hover:border-main-green
+    }
+
+    .btn-gray-hovered-dark {
+        @apply text-gray enabled:hover:text-dark duration-100
+    }
+
+    .btn-danger {
+        @apply bg-error enabled:hover:bg-error/80 duration-100 text-white
+    }
+
+    .inp {
+        @apply text-base px-15 py-10 rounded-5 outline-none border-transparent placeholder-gray focus:ring-transparent focus:border-main-green focus-visible:ring-main-green focus-visible:border-main-green disabled:opacity-50
+    }
+
+    .inp-light-gray {
+        @apply bg-light-gray
+    }
+
+    .inp-white {
+        @apply bg-white shadow
+    }
+
+    .inp-white-bordered {
+        @apply border border-gray
+    }
+
+    .white-substrate {
+        @apply bg-white rounded-5 shadow p-20
+    }
+
+    .pulsing-frame {
+        @apply bg-gray animate-pulse block
+    }
+
+    .cus-link {
+        @apply text-main-green underline hover:text-main-light-green duration-200
+    }
+}
+
+@layer utilities {
+    .overflow-wrap-anywhere {
+        overflow-wrap: anywhere;
+    }
+}
+
+/* Уточнения для инпутов */
+input[type="file"].inp {
+    @apply p-0 pr-40
+}
+
+input[type="file"]::file-selector-button.inp {
+    @apply bg-main-green hover:bg-main-green-700 border border-main-green
+}
+
+input[type="date"].inp, input[type="datetime-local"].inp {
+    @apply px-15
+}
+
+input[type="number"].appearance-none::-webkit-outer-spin-button,
+input[type="number"].appearance-none::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"].appearance-none {
+    -moz-appearance: textfield;
+}
+
+input[type="number"].appearance-none:hover,
+input[type="number"].appearance-none:focus {
+    -moz-appearance: number-input;
+}
+
+input[type='radio']:checked {
+    background-image: none;
+}
+
+/* Доп. классы */
+.cus-bottom-underline {
+    @apply bg-bottom bg-gradient-to-r from-current to-current bg-no-repeat transition-all duration-200 ease-out;
+    background-size: 100% 0;
+}
+
+.cus-bottom-underline:hover {
+    background-size: 100% 0.125rem;
+}
+
+.cus-bottom-shadow{
+    @apply relative after:content-[""] after:absolute after:h-[3px] after:w-full after:bottom-0 after:bg-current
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari and Opera */
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+.development {
+    @apply relative
+}
+
+.development::after {
+    @apply absolute top-0 left-0 w-full h-full z-40 bg-black/50 text-white flex justify-center items-center text-6xl font-semibold;
+    border-radius: inherit;
+    content: "🛠";
+}
+
+.development::before {
+    @apply absolute opacity-0 hover:opacity-100 duration-200 top-0 left-0 w-full h-full z-50 p-20 text-white text-base leading-normal flex justify-center items-center whitespace-pre;
+    content: "\A\A\A\AБлок в разработке";
+}
+
+/* Vue Toastification */
+
+.Vue-Toastification__container.custom-default-toast-container{
+    @apply p-20
+}
+
+.Vue-Toastification__container.top-right.custom-default-toast-container {
+    @apply top-[120px] right-0 items-end
+}
+
+.Vue-Toastification__container.custom-default-toast-container .Vue-Toastification__toast--default.custom-default-toast {
+    @apply white-substrate cursor-pointer text-dark block ml-0 mb-20 w-fit
+}
+
+.Vue-Toastification__container.custom-default-toast-container .Vue-Toastification__toast--default.custom-default-toast .Vue-Toastification__progress-bar {
+    @apply bg-gray
+}
