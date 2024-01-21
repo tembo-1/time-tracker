@@ -1,5 +1,4 @@
-# Sendis
-## b2b portal
+# Time tracker
 
 Technologies used
 - Laravel 10
@@ -28,7 +27,7 @@ And configure the connection to mysql in the .env file
 DB_CONNECTION=mysql
 DB_HOST=localhost
 DB_PORT=3357
-DB_DATABASE=sendis
+DB_DATABASE=time-tracker
 DB_USERNAME=***
 DB_PASSWORD=***
 ```
@@ -44,7 +43,3 @@ To disable the developer panel in the file .env we set the false flag
 ```sh
 APP_DEBUG=false
 ```
-
-## Connecting and integrating suppliers
-
-To receive all usernames and passwords for uploading, please contact us by email tembo535@gmail.com
